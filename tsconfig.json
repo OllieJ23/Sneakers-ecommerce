@@ -21,6 +21,15 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/webhook.js",
+    "components/ui/account/RewardsTab.tsx",
+    "components/ui/cart/CheckoutButton.jsx",
+    "components/ui/cart/CheckoutBtn.jsx"
+  ],
   "exclude": ["node_modules"]
 }

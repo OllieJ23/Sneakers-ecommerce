@@ -2,32 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 }
 
+html {
+  overflow-x: hidden;
+}
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  padding-top: 6rem; /* Adjust this value according to the height of your navbar */
+
+  overflow: hidden;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* For WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  transition: all;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(
+    to top,
+    hsl(26, 100%, 55%),
+    hsl(25, 100%, 94%)
+  ); /* Background gradient of the track */
+  transition: all;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(26, 98%, 52%); /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Radius of the scrollbar thumb */
+  transition: all;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  cursor: grab;
+  transition: all;
+}
+
+.no-select {
+  user-select: none; /* Standard syntax */
+  -webkit-user-select: none; /* Chrome, Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
 }
