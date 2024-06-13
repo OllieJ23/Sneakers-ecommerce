@@ -17,11 +17,11 @@ Originally conceived as a challenge to design a singular product page, this proj
 
 ### Screenshot
 
-![Desktop Landing Page](public\screenshots\desktop-landing-ss.png)
-![Mobile Landing Page](public\screenshots\mobile-landing-ss.png)
-![Desktop Product Page](public\screenshots\desktop-product-ss.png)
-![Mobile Menu Page](public\screenshots\mobile-menu-ss.png)
-![Desktop Products Page](public\screenshots\desktop-mens-ss.png)
+![Desktop Landing Page](./public/screenshots/desktop-landing-ss.png)
+![Mobile Landing Page](./public/screenshots/mobile-landing-ss.png)
+![Desktop Product Page](./public/screenshots/desktop-product-ss.png)
+![Mobile Menu Page](./public/screenshots/mobile-menu-ss.png)
+![Desktop Products Page](./public/screenshots/desktop-mens-ss.png)
 
 ### Links
 
