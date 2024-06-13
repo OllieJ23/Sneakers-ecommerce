@@ -82,7 +82,7 @@ function Navbar() {
   };
 
   return (
-    <div className="fixed left-0 top-0 z-[999] w-full bg-none ">
+    <div className="fixed left-0 top-0 z-[999] w-full bg-lightBlue shadow-sm ">
       <nav className="mt-2 flex items-center justify-around p-4">
         <Link href="/">
           <Image
