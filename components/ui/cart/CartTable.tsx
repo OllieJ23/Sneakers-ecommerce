@@ -5,7 +5,7 @@ import useCartStore from "@/stores/cart-store";
 import Image from "next/image";
 import { TrashIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import BrowseBtn from "../home/BrowseBtn";
+
 import toast from "react-hot-toast";
 import { XCircleIcon } from "@heroicons/react/16/solid";
 import CheckoutBtn from "./CheckoutBtn";
@@ -29,27 +29,26 @@ function CartTable() {
   } = useCartStore();
 
   async function checkout(data: CartItem[], email: string) {
-    const items = data.map((d: CartItem) => {
-      return {
-        name: d.name,
-        quantity: d.quantity,
-        price: d.price,
-        image: `https://testimages.com${d.image}`,
-      };
-    });
-    const res = await axios.post(
-      "http://localhost:4000/checkout",
-      {
+    const items = data.map((d: CartItem) => ({
+      name: d.name,
+      quantity: d.quantity,
+      price: d.price,
+      image: `https://testimages.com${d.image}`,
+    }));
+
+    try {
+      const res = await axios.post("/api/checkout", {
         email,
         items,
-        success_url: "http://localhost:3000/Success", //CHANGE TO SUCCESS PAGE
+        success_url: `${window.location.origin}/Success`, // Dynamic URL for success page
         currency: "gbp",
-      },
-      { headers: { "Access-Control-Allow-Origin": "*" } },
-    );
+      });
 
-    window.location.assign(res.data.url);
-    clearCart();
+      window.location.assign(res.data.url);
+      clearCart();
+    } catch (error) {
+      console.error("There was an error!", error);
+    }
   }
 
   useEffect(() => {
